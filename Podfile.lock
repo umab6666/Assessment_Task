@@ -1,0 +1,41 @@
+PODS:
+  - Kingfisher (5.1.1)
+  - ReachabilitySwift (4.3.0)
+  - SnapKit (4.0.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, branch `master`)
+  - ReachabilitySwift
+  - SnapKit (~> 4.0.0)
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ReachabilitySwift
+    - SnapKit
+
+EXTERNAL SOURCES:
+  Kingfisher:
+    :branch: master
+    :git: https://github.com/onevcat/Kingfisher.git
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :commit: 03c512b96ef0f7857fe4c80e8c1c0fc4bc4e02ff
+    :git: https://github.com/onevcat/Kingfisher.git
+  SVProgressHUD:
+    :commit: e2a6aaa12321962cbe9fbecc370475f369c6566c
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 5053fb0e14036cf9507fef1fb60e081ea141fd3d
+
+COCOAPODS: 1.5.3
