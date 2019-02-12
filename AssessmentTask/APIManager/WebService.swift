@@ -35,22 +35,17 @@ class WebService: NSObject {
     class func parseData(urlStr:String,parameters:Any?,method:MethodType ,successHandler:@escaping successBlock,failureHandler:@escaping failureBlock){
       
         if !ReachabilityHandler.shared.checkReachability(){
-            failureHandler(networkConnectionError)
+            failureHandler(NO_NETWORK_ERRORMESSAGE)
             return
         }
         guard let urlStr = urlStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed), let url = URL(string: urlStr) else{
-             failureHandler(invalidURLErrMsg)
+             failureHandler(INVALID_URL_ERRORMESSAGE)
             return
         }
         
         var request = URLRequest(url: url)
         request.cachePolicy = .reloadIgnoringCacheData
         request.httpMethod = method.getMethodName()
-        request.setValue("text/plain; charset=ISO-8859-1", forHTTPHeaderField: "Content-Type")
-        
-        if(parameters != nil){
-            request.httpBody = self.convertParametersToData(parms: parameters! as AnyObject) as Data?
-        }
         self.callWebservice(request: request) { (result, errMsg) in
             if errMsg == nil {
                 successHandler(result as Any)
@@ -81,19 +76,5 @@ class WebService: NSObject {
             
             }.resume()
     }
-    
-    private
-    class func convertParametersToData(parms:AnyObject) -> NSData?{
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: parms, options: JSONSerialization.WritingOptions.prettyPrinted)
-            let jsonStr = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
-            return jsonStr!.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false) as NSData?
-        }catch let err as NSError{
-            print("JSON ERROR\(err.localizedDescription)")
-        }
-        catch {
-            // Catch any other errors
-        }
-        return nil
-    }
+
 }

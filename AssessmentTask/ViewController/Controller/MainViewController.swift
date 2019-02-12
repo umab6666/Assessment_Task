@@ -16,7 +16,7 @@ class MainViewController: UIViewController{
         let table = UITableView()
         return table
     }()
-    let mainViewModel: MainViewModalProtocol = MainViewModal()
+    let mainViewModel: MainViewModalProtocol = MainViewModal(dataSourceProtocol: RemoteDataSource())
     var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -49,14 +49,12 @@ class MainViewController: UIViewController{
             make.edges.equalToSuperview()
         }
         
-        
         //Adding Pull To Refresh
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
         self.tableView.addSubview(refreshControl)
     }
     @objc func refresh(sender:AnyObject) {
-        // Code to refresh table view
         self.getCategorys()
     }
 }

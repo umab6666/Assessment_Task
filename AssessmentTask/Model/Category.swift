@@ -7,19 +7,21 @@
 //
 import Foundation
 
-struct Category {
+class Category: NSObject {
     
     var imageurl : URL?
     var titleString = ""
     var descriptionString = ""
     
     init?(dict:[String:Any]) {
-        self.titleString =  dict["title"] as? String ?? ""
-        self.descriptionString =  dict["description"] as? String ?? ""
+        let title = dict["title"] as? String ?? ""
+        let desc = dict["description"] as? String ?? ""
         let urlString = dict["imageHref"] as? String ?? ""
-        self.imageurl = URL(string:urlString)
-        if self.titleString.isEmpty && self.descriptionString.isEmpty && urlString.isEmpty {
+        if title.isEmpty && desc.isEmpty && urlString.isEmpty {
             return nil
         }
+        self.titleString =  title
+        self.descriptionString =  desc
+        self.imageurl = URL(string:urlString)
     }
 }

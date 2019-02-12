@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
-let contentUrl =  "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
-let invalidURLErrMsg = "Invalid url"
-let networkConnectionError = "Internet connection appears to be offline.Please check your Network"
+let CONTENT_URL =  "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
+let INVALID_URL_ERRORMESSAGE = "Invalid url"
+let NO_NETWORK_ERRORMESSAGE = "Internet connection appears to be offline.Please check your Network"
+let INVALID_RESPONSE_ERRORMESSAGE = "Invalid response"
+

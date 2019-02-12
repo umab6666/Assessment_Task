@@ -13,7 +13,7 @@ protocol RemoteDataSourceProtocol {
 class RemoteDataSource: RemoteDataSourceProtocol {
 
     func getAllCategories(successHandler: @escaping ([Category], String) -> Void,failureHandler: @escaping (String?) -> Void) {
-        WebService.parseData(urlStr: contentUrl, parameters: nil, method: .GET, successHandler: { (result) in
+        WebService.parseData(urlStr: CONTENT_URL, parameters: nil, method: .GET, successHandler: { (result) in
             var contentArray = [Category]()
             if let dict = result as? [String:Any] {
                 let headerTitle = dict["title"] as? String ?? ""
@@ -26,7 +26,7 @@ class RemoteDataSource: RemoteDataSourceProtocol {
                 }
                 successHandler(contentArray,headerTitle)
             } else {
-                failureHandler("Invalid response")
+                failureHandler(INVALID_RESPONSE_ERRORMESSAGE)
             }
         }) { (errMsg) in
             failureHandler(errMsg)
