@@ -17,6 +17,10 @@
 		15BC14152212C831000D2844 /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC14142212C831000D2844 /* MainTableCell.swift */; };
 		15E4B8E22212EAA900ED81E0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B8E12212EAA900ED81E0 /* Category.swift */; };
 		15E4B8E42212EB1B00ED81E0 /* MainViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B8E32212EB1B00ED81E0 /* MainViewModal.swift */; };
+		15E4B8E82212FEC900ED81E0 /* AssessmentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B8E72212FEC900ED81E0 /* AssessmentConstants.swift */; };
+		15E4B8EA2212FF8300ED81E0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B8E92212FF8300ED81E0 /* Alert.swift */; };
+		15E4B8EC2213129400ED81E0 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B8EB2213129400ED81E0 /* RemoteDataSource.swift */; };
+		15E4B8EE22131D8B00ED81E0 /* ReachabilityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B8ED22131D8B00ED81E0 /* ReachabilityHandler.swift */; };
 		7144FD7CC93A0799333ABC87 /* Pods_AssessmentTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0994AB1195DFC08A52A78AF9 /* Pods_AssessmentTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,10 @@
 		15BC14142212C831000D2844 /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		15E4B8E12212EAA900ED81E0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		15E4B8E32212EB1B00ED81E0 /* MainViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModal.swift; sourceTree = "<group>"; };
+		15E4B8E72212FEC900ED81E0 /* AssessmentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentConstants.swift; sourceTree = "<group>"; };
+		15E4B8E92212FF8300ED81E0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		15E4B8EB2213129400ED81E0 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		15E4B8ED22131D8B00ED81E0 /* ReachabilityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHandler.swift; sourceTree = "<group>"; };
 		575BD391B6859E19A54A9180 /* Pods-AssessmentTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssessmentTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssessmentTask/Pods-AssessmentTask.debug.xcconfig"; sourceTree = "<group>"; };
 		83D02DE1FB5F745E533285FC /* Pods-AssessmentTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssessmentTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssessmentTask/Pods-AssessmentTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +123,11 @@
 				150A51962212B48C00C837B0 /* LaunchScreen.storyboard */,
 				150A51992212B48C00C837B0 /* Info.plist */,
 				150A51BB2212B57800C837B0 /* WebService.swift */,
+				15E4B8ED22131D8B00ED81E0 /* ReachabilityHandler.swift */,
+				15E4B8EB2213129400ED81E0 /* RemoteDataSource.swift */,
 				150A51BD2212B92700C837B0 /* MainViewController.swift */,
+				15E4B8E92212FF8300ED81E0 /* Alert.swift */,
+				15E4B8E72212FEC900ED81E0 /* AssessmentConstants.swift */,
 				15BC14142212C831000D2844 /* MainTableCell.swift */,
 				15E4B8E12212EAA900ED81E0 /* Category.swift */,
 				15E4B8E32212EB1B00ED81E0 /* MainViewModal.swift */,
@@ -347,8 +359,12 @@
 				15E4B8E22212EAA900ED81E0 /* Category.swift in Sources */,
 				150A51BC2212B57800C837B0 /* WebService.swift in Sources */,
 				15E4B8E42212EB1B00ED81E0 /* MainViewModal.swift in Sources */,
+				15E4B8EC2213129400ED81E0 /* RemoteDataSource.swift in Sources */,
+				15E4B8EE22131D8B00ED81E0 /* ReachabilityHandler.swift in Sources */,
 				150A518E2212B48A00C837B0 /* AppDelegate.swift in Sources */,
 				15BC14152212C831000D2844 /* MainTableCell.swift in Sources */,
+				15E4B8EA2212FF8300ED81E0 /* Alert.swift in Sources */,
+				15E4B8E82212FEC900ED81E0 /* AssessmentConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

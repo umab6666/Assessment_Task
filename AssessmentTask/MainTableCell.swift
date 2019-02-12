@@ -38,12 +38,13 @@ class MainTableCell: UITableViewCell {
     }
     
     func setupUIElements(){
+        self.selectionStyle = .none
         
         //Adding ImageView
         self.contentView.addSubview(imgView)
         imgView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp_leftMargin).offset(10)
-            make.height.width.equalTo(50)
+            make.height.width.equalTo(60)
             make.top.equalTo(self.contentView.snp_topMargin).offset(20)
         }
         
@@ -51,8 +52,9 @@ class MainTableCell: UITableViewCell {
         self.contentView.addSubview(titleLabel)
         self.titleLabel.numberOfLines = 0
         self.titleLabel.contentMode = .center
+        self.titleLabel.textColor = .black
         titleLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.imgView.snp_trailingMargin).offset(10)
+            make.leading.equalTo(self.imgView.snp_trailingMargin).offset(15)
             make.right.equalTo(self.contentView).offset(-10)
             make.height.equalTo(20)
             make.top.equalTo(self.imgView)
@@ -61,6 +63,7 @@ class MainTableCell: UITableViewCell {
         //Adding Description Label
         self.contentView.addSubview(descriptionLabel)
         self.descriptionLabel.numberOfLines = 0
+        self.descriptionLabel.textColor = .gray
         descriptionLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(self.titleLabel)
             make.height.greaterThanOrEqualTo(30)

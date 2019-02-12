@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 
+
 enum MethodType {
     case GET,POST,PUT,DELETE,PATCH
     
@@ -32,11 +33,20 @@ typealias failureBlock = (_ errMsg:String) -> Void
 
 class WebService: NSObject {
     class func parseData(urlStr:String,parameters:Any?,method:MethodType ,successHandler:@escaping successBlock,failureHandler:@escaping failureBlock){
-        let url = URL(string: urlStr.replacingOccurrences(of: " ", with: "%20"))
-        var request = URLRequest(url: url!)
+      
+        if !ReachabilityHandler.shared.checkReachability(){
+            failureHandler(networkConnectionError)
+            return
+        }
+        guard let urlStr = urlStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed), let url = URL(string: urlStr) else{
+             failureHandler(invalidURLErrMsg)
+            return
+        }
+        
+        var request = URLRequest(url: url)
         request.cachePolicy = .reloadIgnoringCacheData
         request.httpMethod = method.getMethodName()
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("text/plain; charset=ISO-8859-1", forHTTPHeaderField: "Content-Type")
         
         if(parameters != nil){
             request.httpBody = self.convertParametersToData(parms: parameters! as AnyObject) as Data?
@@ -54,8 +64,10 @@ class WebService: NSObject {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, err) in
             if err == nil {
+                let responseString = String(data: data!, encoding: String.Encoding.ascii)
+                let responseData = responseString?.data(using: String.Encoding.utf8)
                 do {
-                    let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                    let result = try JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
                     DispatchQueue.main.async {
                         completionBlock(result,nil)
                     }
